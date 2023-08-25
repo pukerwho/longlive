@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply px-4 md:px-8 lg:px-12;
+}
+a {
+  @apply cursor-pointer;
+}
+.menu {
+  @apply bg-gray-200 lg:bg-transparent w-full lg:w-64 h-screen fixed top-0 -translate-x-full lg:translate-x-0 transition-transform duration-300 lg:pr-2 z-11;
+}
+.menu-open .menu {
+  @apply translate-x-0;
+}
+.absolute-link {
+  @apply w-full h-full absolute top-0 left-0 z-10;
+}
+.btn-primary {
+  @apply bg-indigo-500 text-gray-200 rounded;
+}
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-indigo-500 text-gray-800 hover:text-gray-200 rounded;
+}
+.space-top {
+  @apply pt-24;
+}
+.dark-mode.active .dark-mode-item {
+  @apply bg-white;
+}
+.main-menu.mobile {
+  @apply block w-full h-full bg-white absolute top-20 z-1;
+}
+
+.custom-input {
+  @apply rounded outline-none;
+}
+.custom-input:focus {
+  @apply border border-primary;
+}
+
+.pagination .page-numbers {
+  @apply inline-flex items-center justify-center w-10 h-10 border border-blue-500 rounded hover:text-white hover:bg-blue-500 px-3 mx-1;
+}
+.pagination .page-numbers.current {
+  @apply bg-blue-500 text-gray-200;
+}
+
+.content a {
+  @apply cursor-pointer text-blue-500 border-b border-blue-500;
+}
+.content a:hover {
+  @apply border-b border-transparent;
+}
+.content p {
+  @apply text-lg leading-[1.5] mb-4;
+}
+.content p:last-of-type {
+  @apply mb-0;
+}
+.content-single h2 {
+  @apply font-bold text-2xl mb-6 mt-6;
+}
+.content-single h3 {
+  @apply font-bold text-xl mb-4 mt-6;
+}
+.content-single h4 {
+  @apply font-bold text-lg mb-4 mt-6;
+}
+.content ul {
+  @apply text-lg leading-[1.5] list-disc text-gray-800 ml-4 mb-8;
+}
+.content ol {
+  @apply text-lg leading-[1.5] list-decimal text-gray-800 ml-5 mb-8;
+}
+.content ul li {
+  @apply list-disc;
+}
+.content li {
+  @apply text-gray-800 mb-2;
+}
+.content li:last-of-type {
+  @apply mb-0;
+}
+.content .wp-block-image {
+  @apply border shadow-xl rounded-lg p-5 mb-8;
+}
+.content .wp-block-image img {
+  @apply w-full;
+}
+.content .wp-block-image figcaption {
+  @apply text-center italic mt-4 mb-0;
+}
+
+.active-link {
+  @apply text-blue-500 bg-blue-50 rounded px-3 py-2;
+}
+
+.vote-correct {
+  @apply bg-green-500 text-gray-800 ;
+}
+.vote-wrong {
+  @apply bg-red-500 text-gray-800;
+}
+
+.treba-links a {
+  @apply block text-sm mb-1;
+}
