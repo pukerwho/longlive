@@ -38,7 +38,7 @@ Template Name: All Posts
           $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
           $all_posts = new WP_Query( array( 
             'post_type' => 'post', 
-            'posts_per_page' => 1,
+            'posts_per_page' => 20,
             'order' => 'DESC',
             'paged' => $current,
           ) );

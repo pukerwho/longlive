@@ -34,6 +34,14 @@ $Parsedown = new Parsedown();
         </div>
       </div>
       <!-- end Meta -->
+      
+      <?php 
+        $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+        $large_thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+      ?>
+      <?php if ($medium_thumb): ?>
+        <img class="w-full h-[240px] min-h-[240px] object-cover rounded" alt="<?php the_title(); ?>" src="<?php echo $medium_thumb; ?>" srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w" loading="lazy" data-src="<?php echo $medium_thumb; ?>" data-srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w">
+      <?php endif; ?>
 
       <!-- Content -->
       <div class="content" itemprop="articleBody">

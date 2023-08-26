@@ -55,6 +55,17 @@ foreach (array_slice($current_categories, 0, 1) as $current_category) {
         <div class="">Views: <?php echo $countNumber; ?> ・ </div>
         <div class="post-time-read"><span></span> min read</div>
       </div>
+      <?php 
+        $medium_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+        $large_thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+      ?>
+      <?php if ($medium_thumb): ?>
+        <div class="mb-6">
+          <img class="w-full object-cover rounded-lg border shadow-xl" alt="<?php the_title(); ?>" src="<?php echo $medium_thumb; ?>" srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w" loading="lazy" data-src="<?php echo $medium_thumb; ?>" data-srcset="<?php echo $medium_thumb; ?> 1024w, <?php echo $large_thumb; ?> 1536w">
+        </div>
+        
+      <?php endif; ?>
+      
       <div class="content">
         <div class="bg-blue-50 rounded-lg border px-6 py-4 mb-6">
           <h2 class="text-2xl font-bold mb-2">Short answer</h2>
