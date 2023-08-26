@@ -183,3 +183,11 @@ function crb_get_i18n_theme_option( $option_name ) {
 //     update_post_meta($post_id, '_crb_post_mainhide', 'no');
 //   }
 // }
+
+function SearchFilter($query) {
+  if ($query->is_search) {
+    $query->set('post_type', 'post');
+  }
+  return $query;
+}
+add_filter('pre_get_posts','SearchFilter');
