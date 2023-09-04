@@ -12,18 +12,20 @@ foreach (array_slice($current_categories, 0, 1) as $current_category) {
 
 <div class="container mb-10">
   <div class="flex flex-col-reverse lg:flex-row flex-wrap lg:-mx-4 mb-10">
-    <div class="sticky top-4 w-full lg:w-1/4 lg:px-4">
-      <div class="hidden lg:block">
-        <div class="single-subjects bg-gray-50 border rounded-lg p-4 mb-5">
-          <div class="text-2xl font-bold uppercase mb-3">
-            <?php _e('Content','treba-wp'); ?>:
+    <div class="w-full lg:w-1/4 lg:px-4">
+      <div class="sticky top-4">
+        <div class="hidden lg:block">
+          <div class="single-subjects bg-gray-50 border rounded-lg p-4 mb-5">
+            <div class="text-2xl font-bold uppercase mb-3">
+              <?php _e('Content','treba-wp'); ?>:
+            </div>
+            <div class="single-subjects-inner"></div>
           </div>
-          <div class="single-subjects-inner"></div>
         </div>
-      </div>
-      <div class="bg-green-50 border rounded-lg p-4">
-        <div class="text-lg font-semibold mb-4"><?php _e("Don’t forget to share this post", "treba-wp"); ?></div>
-        <div><?php do_action('show_social_share_buttons'); ?></div>
+        <div class="bg-green-50 border rounded-lg p-4">
+          <div class="text-lg font-semibold mb-4"><?php _e("Don’t forget to share this post", "treba-wp"); ?></div>
+          <div><?php do_action('show_social_share_buttons'); ?></div>
+        </div>
       </div>
     </div>
     <div class="w-full lg:w-3/4 lg:px-4 mb-6">
