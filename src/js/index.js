@@ -5,4 +5,5 @@ import "./menu.js";
 import "./subjects.js";
 import "./read-time.js";
 import "./quiz.js";
+import "./vote.js";
 import "./chatgpt.js";

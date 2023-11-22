@@ -35,6 +35,7 @@ include('inc/comments-functions.php');
 include('inc/seo-functions.php');
 include('inc/parsedown.php');
 include('inc/footer-links.php');
+include('inc/vote.php');
 include('inc/chatgpt/chatgpt.php');
 
 use Carbon_Fields\Container;
