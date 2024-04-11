@@ -4,9 +4,11 @@ $currentId = get_the_ID();
 $countNumber = tutCount($currentId); 
 $Parsedown = new Parsedown();
 $current_categories = get_the_terms( $new_posts->ID, 'category' );
-foreach (array_slice($current_categories, 0, 1) as $current_category) {
-  $current_category_name = $current_category->name;
-  $current_category_id = $current_category->term_id;
+if ($current_categories) {
+  foreach (array_slice($current_categories, 0, 1) as $current_category) {
+    $current_category_name = $current_category->name;
+    $current_category_id = $current_category->term_id;
+  }
 }
 ?>
 
@@ -69,22 +71,7 @@ foreach (array_slice($current_categories, 0, 1) as $current_category) {
       <?php endif; ?>
       
       <div class="content">
-        <div class="bg-blue-50 rounded-lg border px-6 py-4 mb-6">
-          <h2 class="text-2xl font-bold mb-2">Short answer</h2>
-          <div><p><?php echo get_post_meta($currentId, "meta_post_short", true); ?></p></div>
-        </div>
-        <div class="mb-6">
-          <h2 class="text-2xl font-bold">Life expectancy</h2>
-          <div><p><?php $meta_long = get_post_meta($currentId, "meta_post_long", true); echo $Parsedown->text($meta_long); ?></p></div>
-        </div>
-        <div class="bg-gray-50 border rounded-lg p-4 pb-0 mb-6">
-          <h2 class="text-2xl font-bold">Some interesting facts about <?php echo get_post_meta($currentId, "meta_post_name", true); ?></h2>
-          <div><p><?php $meta_facts = get_post_meta($currentId, "meta_post_facts", true); echo $Parsedown->text($meta_facts); ?></p></div>
-        </div>
-        <div class="border-b border-gray-200 pb-6 mb-6">
-          <h2 class="text-2xl font-bold">Summary</h2>
-          <div><p><?php $meta_summary = get_post_meta($currentId, "meta_post_summary", true); echo $Parsedown->text($meta_summary); ?></p></div>
-        </div>
+        <?php the_content(); ?>
       </div>
       <div>
         <div class="text-2xl font-bold mb-2">Comments</div>
