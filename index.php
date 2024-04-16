@@ -4,11 +4,11 @@
       <?php $top_posts = get_posts(array( 
         'post_type' => 'p'
       ));?>
-      <?php $top_posts[0]->ID; ?>
+      <?php $zero_post_id = $top_posts[0]->ID; ?>
       <!-- Left - First -->
       <div class="w-full lg:w-3/5 lg:px-2 mb-4">
         <div class="relative h-[225px] lg:h-[450px]">
-          <img src="http://longlive.local/wp-content/uploads/2023/08/casino-1.jpg" alt="" class="w-full h-[225px] lg:h-[450px] object-cover rounded-lg">
+          <img src="<?php echo get_the_post_thumbnail_url($top_posts[0]->ID); ?>" alt="" class="w-full h-[225px] lg:h-[450px] object-cover rounded-lg">
           <div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-black/75 rounded-lg z-1"></div>
           <div class="w-full absolute left-0 bottom-0 z-1">
             <div class="text-lg lg:text-2xl text-white px-4 lg:px-8 py-4 lg:py-6"><?php echo get_the_title($top_posts[0]->ID); ?></div>
@@ -21,7 +21,7 @@
         <div class="h-auto lg:h-[450px]">
           <!-- Right - second -->
           <div class="relative mb-4">
-            <img src="http://longlive.local/wp-content/uploads/2023/08/casino-1.jpg" alt="" class="w-full h-[225px] lg:h-[216px] object-cover rounded-lg">
+            <img src="<?php echo get_the_post_thumbnail_url($top_posts[1]->ID); ?>" alt="" class="w-full h-[225px] lg:h-[216px] object-cover rounded-lg">
             <div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-black/75 rounded-lg z-1"></div>
             <div class="w-full absolute left-0 bottom-0 z-1">
               <div class="text-lg lg:text-2xl text-white px-4 lg:px-8 py-4 lg:py-6"><?php echo get_the_title($top_posts[1]->ID); ?></div>
@@ -30,7 +30,7 @@
           </div>
           <!-- Right - third -->
           <div class="relative">
-            <img src="http://longlive.local/wp-content/uploads/2023/08/casino-1.jpg" alt="" class="w-full h-[225px] lg:h-[216px] object-cover rounded-lg">
+            <img src="<?php echo get_the_post_thumbnail_url($top_posts[2]->ID); ?>" alt="" class="w-full h-[225px] lg:h-[216px] object-cover rounded-lg">
             <div class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-black/75 rounded-lg z-1"></div>
             <div class="w-full absolute left-0 bottom-0 z-1">
               <div class="text-lg lg:text-2xl text-white px-4 lg:px-8 py-4 lg:py-6"><?php echo get_the_title($top_posts[2]->ID); ?></div>

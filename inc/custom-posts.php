@@ -26,7 +26,7 @@ function create_post_type() {
       'public' => true,
       'has_archive' => true,
       'hierarchical' => true,
-      'show_in_rest' => false,
+      'show_in_rest' => true,
       'taxonomies' => array( 'category' ),
       'menu_icon' => 'dashicons-feedback',
       'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields', 'revisions', 'page-attributes' ),

@@ -70,7 +70,7 @@ if ($current_categories) {
         
       <?php endif; ?>
       
-      <div class="content">
+      <div class="content mb-6">
         <?php the_content(); ?>
       </div>
       <div>
