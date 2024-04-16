@@ -59,13 +59,13 @@ a {
 .content p:last-of-type {
   @apply mb-0;
 }
-.content-single h2 {
+.content-single h2, .single-p h2 {
   @apply font-bold text-2xl mb-6 mt-6;
 }
-.content-single h3 {
+.content-single h3, .single-p h3 {
   @apply font-bold text-xl mb-4 mt-6;
 }
-.content-single h4 {
+.content-single h4, .single-p h4 {
   @apply font-bold text-lg mb-4 mt-6;
 }
 .content ul {
