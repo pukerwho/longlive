@@ -72,3 +72,34 @@
     </div>
   </div>
 </div>
+
+<div class="bg-blue-50 rounded-lg px-4 py-5 mb-6">
+  <div class="text-xl font-bold decoration-blue-500 decoration-wavy underline mb-4">Life expectancy</div>
+  <div class="text-gray-600 font-light leading-6 mb-6">
+    <ul>
+    <?php 
+      $posts = new WP_Query( array( 
+        'post_type' => 'post', 
+        'posts_per_page' => 20,
+        'order' => 'DESC',
+      ) );
+      if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post(); 
+    ?>
+      <li class="list-disc ml-4 mb-1 last-of-type:mb-0"><?php the_title(); ?></li>
+    <?php endwhile; endif; wp_reset_postdata(); ?>
+    </ul>
+  </div>
+  <div>
+    <?php $all_cats = get_terms( array( 
+      'taxonomy' => 'category', 
+      'parent' => 0, 
+      'hide_empty' => false,
+      'exclude'  => 1,
+    ));
+    foreach ( array_slice($all_cats, 0, 9) as $all_cat ): ?>
+      <div class="mb-2 last-of-type:mb-0">
+        <a href="<?php echo get_term_link($all_cat); ?>" class="block text-gray-600 bg-blue-200 text-center rounded px-3 py-2"><?php echo $all_cat->name ?></a>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</div>

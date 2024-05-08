@@ -82,8 +82,11 @@
               <li class="mb-2 lg:mb-0 lg:px-4"><a href="<?php echo get_page_url('tpl_allposts'); ?>">All posts</a></li>
             </ul>
           </nav>
+          <div class="mb-4 lg:mb-0 lg:mr-6">
+            <?php echo get_search_form(); ?>
+          </div>
           <div>
-            <a href="/contact-us" class="text-blue-500 border border-blue-500 rounded px-4 py-2">Contact Us</a>
+            <a href="/contact-us" class="block text-blue-500 border border-blue-500 rounded px-4 py-2">Contact Us</a>
           </div>
         </div>
         <div class="lg:hidden text-gray-600 cursor-pointer menu-js">

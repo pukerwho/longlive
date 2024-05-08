@@ -2,7 +2,8 @@
   <div class="container">
     <div class="flex flex-wrap lg:-mx-2 mb-6">
       <?php $top_posts = get_posts(array( 
-        'post_type' => 'p'
+        'post_type' => 'p',
+         'numberposts' => 5
       ));?>
       <?php $zero_post_id = $top_posts[0]->ID; ?>
       <!-- Left - First -->
@@ -40,38 +41,15 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-wrap items-center lg:-mx-4 mb-6">
-      <div class="w-full lg:w-3/4 lg:px-4 mb-6 lg:mb-0">
-        <h2 class="text-2xl lg:text-3xl font-semibold decoration-blue-500 decoration-wavy underline mb-6"><?php _e("Life expectancy", "treba-wp"); ?></h2>
-        <div class="flex items-center -mx-2 lg:-mx-4">
-          <div class="px-2 lg:px-4">
-            <a href="<?php echo get_page_url('tpl_allposts'); ?>" class="text-blue-500 bg-blue-50 rounded px-3 py-2">All</a>
-          </div>
-          <?php $all_cats = get_terms( array( 
-            'taxonomy' => 'category', 
-            'parent' => 0, 
-            'hide_empty' => false,
-            'exclude'  => 1,
-          ));
-          foreach ( array_slice($all_cats, 0, 9) as $all_cat ): ?>
-            <div class="px-2 lg:px-4">
-              <a href="<?php echo get_term_link($all_cat); ?>" class="text-base lg:text-lg text-gray-700"><?php echo $all_cat->name ?></a>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
-      <div class="w-full lg:w-1/4 lg:px-4">
-        <?php echo get_search_form(); ?>
-      </div>
-    </div>
   
     <div class="flex flex-wrap lg:-mx-4 mb-10">
       <div class="w-full lg:w-3/4 lg:px-4 mb-6 lg:mb-0">
         <div class="flex flex-wrap lg:-mx-4 mb-6">
           <?php 
             $posts = new WP_Query( array( 
-              'post_type' => 'post', 
+              'post_type' => 'p', 
               'posts_per_page' => 20,
+              'offset' => 3,
               'order' => 'DESC',
             ) );
             if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post(); 

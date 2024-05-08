@@ -14,7 +14,7 @@
     <div class="text-gray-600 font-light"><?php echo get_the_modified_time('Y-m-j'); ?>・</div>
     <div>
       <?php
-      $post_categories = get_the_terms( $new_posts->ID, 'category' );
+      $post_categories = get_the_terms( $posts->ID, 'category' );
       foreach (array_slice($post_categories, 0, 1) as $post_category){ ?>
         <a href="<?php echo get_term_link($post_category->term_id, 'category') ?>" class="text-blue-500"><?php echo $post_category->name; ?></a> 
       <?php } ?>

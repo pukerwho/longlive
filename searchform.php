@@ -5,6 +5,6 @@
     </svg>  
   </div>
   <div class="flex items-stretch">
-    <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" class="w-full placeholder-gray-500 bg-white rounded pl-10 p-3" placeholder="<?php _e("Search", "treba-wp"); ?>" />
+    <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" class="w-full placeholder-gray-500 bg-white rounded pl-10 px-4 py-2" placeholder="<?php _e("Search", "treba-wp"); ?>" />
   </div>
 </form>

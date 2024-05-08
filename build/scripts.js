@@ -936,7 +936,7 @@ eval("var $ = __webpack_require__( /*! jquery */ \"./node_modules/jquery/dist/jq
   \*****************************/
 /***/ (function() {
 
-eval("function readingTime() {\n  const text = document.querySelector(\".single-post .content\").innerText;\n  const wpm = 150;\n  const words = text.trim().split(/\\s+/).length;\n  const time = Math.ceil(words / wpm);\n  document.querySelector(\".post-time-read span\").innerText = time;\n}\nif (document.body.classList.contains(\"single-post\")) {\n  readingTime();\n}\n\n//# sourceURL=webpack://world/./src/js/read-time.js?");
+eval("function readingTime() {\n  const text = document.querySelector(\".single .content\").innerText;\n  const wpm = 150;\n  const words = text.trim().split(/\\s+/).length;\n  const time = Math.ceil(words / wpm);\n  document.querySelector(\".post-time-read span\").innerText = time;\n}\nif (document.body.classList.contains(\"single\")) {\n  readingTime();\n}\n\n//# sourceURL=webpack://world/./src/js/read-time.js?");
 
 /***/ }),
 
