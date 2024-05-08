@@ -10,7 +10,7 @@
         </div>
         <div>
           <div class="mb-4">This website provides a collection of articles detailing the average lifespans of various entities, including people, animals, and more.</div>
-          <div>© 2023</div>
+          <div>© <?php echo date("Y"); ?></div>
         </div>
       </div>
       <div class="w-full lg:w-1/4 lg:px-6 mb-6 lg:mb-0">

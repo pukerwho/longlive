@@ -24,9 +24,26 @@ if ($current_categories) {
             <div class="single-subjects-inner"></div>
           </div>
         </div>
-        <div class="bg-green-50 border rounded-lg p-4">
+        <div class="bg-green-50 border rounded-lg p-4 mb-5">
           <div class="text-lg font-semibold mb-4"><?php _e("Don’t forget to share this post", "treba-wp"); ?></div>
           <div><?php do_action('show_social_share_buttons'); ?></div>
+        </div>
+        <div class="bg-gray-50 border rounded-lg p-4">
+          <div class="text-2xl font-bold decoration-blue-500 decoration-wavy underline mb-3">
+            <?php _e('Life expectancy','treba-wp'); ?>
+          </div>
+          <ul>
+            <?php 
+              $posts = new WP_Query( array( 
+                'post_type' => 'post', 
+                'posts_per_page' => 20,
+                'order' => 'DESC',
+              ) );
+              if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post(); 
+            ?>
+              <li class="list-disc ml-4 mb-1 last-of-type:mb-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; endif; wp_reset_postdata(); ?>
+          </ul>
         </div>
       </div>
     </div>
@@ -85,7 +102,7 @@ if ($current_categories) {
   <div class="flex flex-wrap -mx-4">
     <?php 
       $other_posts = new WP_Query( array( 
-        'post_type' => 'post', 
+        'post_type' => 'p', 
         'posts_per_page' => 4,
         'order' => 'DESC',
         'post__not_in' => array($currentId),

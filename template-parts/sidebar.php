@@ -85,7 +85,7 @@
       ) );
       if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post(); 
     ?>
-      <li class="list-disc ml-4 mb-1 last-of-type:mb-0"><?php the_title(); ?></li>
+      <li class="list-disc ml-4 mb-1 last-of-type:mb-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
     <?php endwhile; endif; wp_reset_postdata(); ?>
     </ul>
   </div>
