@@ -87,7 +87,9 @@ foreach (array_slice($current_categories, 0, 1) as $current_category) {
       
       <div class="content">
         <?php if (get_the_content()): ?>
-          <?php the_content(); ?>
+          <div class="content-box">
+            <?php the_content(); ?>
+          </div>
         <?php else: ?>
           <div class="bg-blue-50 rounded-lg border px-6 py-4 mb-6">
             <h2 class="text-2xl font-bold mb-2">Short answer</h2>
